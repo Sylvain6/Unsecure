@@ -1,0 +1,31 @@
+{
+  "name": "unsecure",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "phpstan": "php bin/phpstan",
+    "phpunit": "php bin/phpunit",
+    "test": "php bin/phpunit",
+    "php-cs": "vendor/bin/php-cs-fixer fix"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/access-token-boys/Unsecure.git"
+  },
+  "author": "LIEGE, RAKOTONIRINA, HARANG, COUTROT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/access-token-boys/Unsecure/issues"
+  },
+  "homepage": "https://github.com/access-token-boys/Unsecure#readme",
+  "devDependencies": {
+    "husky": "^1.1.2"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn php-cs && yarn phpstan analyse src && yarn phpunit",
+      "pre-push": "yarn phpstan analyse src && yarn phpunit"
+    }
+  }
+}
