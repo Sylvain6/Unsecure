@@ -1,0 +1,26 @@
+language: php
+php:
+  - '5.5'
+  - '7.0'
+allow_failures:
+  - php: 7.0
+before_install:
+  - composer require friendsofphp/php-cs-fixer
+script: ./vendor/bin/php-cs-fixer fix . --dry-run
+notifications:
+  slack:
+    rooms:
+      - met-nous-20-stp:nLYPmcR8hwAg8aesN1MInZPd#travis
+      - met-nous-20-stp:nLYPmcR8hwAg8aesN1MInZPd#github
+    on_succes: always # default: change
+    on_failure: always # default: always
+  email:
+    recipients:
+      - sylvain.coutrot@hotmail.fr
+      - lharang.pro@gmail.com
+    template:
+      - "%{repository_slug}#%{build_number} (%{branch} - %{commit} : %{author}): %{message}
+      - "Change view : %{compare_url}"
+      - "Build details : %{build_url}"
+    on_success: never # default: change
+    on_failure: always # default: always
