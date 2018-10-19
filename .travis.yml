@@ -9,7 +9,7 @@ before_install:
 script: ./vendor/bin/php-cs-fixer fix . --dry-run
 notifications:
   slack:
-    room:
+    rooms:
       - met-nous-20-stp:nLYPmcR8hwAg8aesN1MInZPd#travis
       - met-nous-20-stp:nLYPmcR8hwAg8aesN1MInZPd#github
     on_succes: always # default: change
