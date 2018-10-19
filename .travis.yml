@@ -5,4 +5,11 @@ php:
 allow_failures:
   - php: 7.0
 script:
-  - echo "test on travis""
+  - echo "test on travis"
+notifications:
+  email:
+    recipients:
+      - sylvain.coutrot@hotmail.fr
+      - lharang.pro@gmail.com
+    on_success: never # default : change
+    on_failure: always # default: always
