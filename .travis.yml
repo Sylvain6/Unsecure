@@ -12,8 +12,6 @@ notifications:
     rooms:
       - met-nous-20-stp:nLYPmcR8hwAg8aesN1MInZPd#travis
       - met-nous-20-stp:nLYPmcR8hwAg8aesN1MInZPd#github
-    on_succes: always # default: change
-    on_failure: always # default: always
   email:
     recipients:
       - sylvain.coutrot@hotmail.fr
